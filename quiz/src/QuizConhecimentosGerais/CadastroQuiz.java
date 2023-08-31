@@ -13,7 +13,6 @@ public class CadastroQuiz {
             {"Qual é a capital da França?", "A) Londres", "B) Madri", "C) Berlim", "D) Paris", "D"},
             {"Qual é o maior planeta do Sistema Solar?", "A) Terra", "B) Marte", "C) Júpiter", "D) Saturno", "C"}
     };
-
         System.out.println("RESPOSTAS DADAS NO QUIZ ");
         for (i = 1; i < 3; i++) {
             System.out.print("Qual a classe dos golginhos?");
