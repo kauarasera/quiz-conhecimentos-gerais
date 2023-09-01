@@ -17,36 +17,51 @@ Pergunta | resposta escolhida | resposta correta | Correção
 import java.util.Scanner;
 
 public class Quiz {
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+        int i, totResp = 4;
+        String gab[] = new String[totResp];
+        String resp;
 
-        Scanner ler = new Scanner(System.in);
-        int totQuest = 4;
-        String[] quest[] = {
-                { "Qual a classe dos golginhos?", "A) Peixe ", "B) Anfibio", "C) Mamiferio" },
-                { "Qual é a capital da França?", "A) Londres", "B) Madri", "C) Berlim" },
-                { "Qual é o maior planeta do Sistema Solar?", "A) Terra", "B) Marte", "C) Júpiter" },
-                { "Qual é o maior mamífero terrestre?", "A) Elefante Africano", "B) Girafa", "C) Rinoceronte" }
-        };
+        // Gabarito para comparar com a resposta do usuario
+        System.out.println("ETAPA 1 - Cadastro de Respostas");
+        System.out.println("----------------------------------");
+        for (i = 0; i < totResp; i++) {
+            System.out.print("Questão " + i + ": ");
+            gab[i] = leia.nextLine();
 
-        int i;
-        int respCorreta = 0;
-        int respErrada = 0;
-        String resp[] = new String[totQuest];
+            // Vai ler cada pergunta e receber uma
+            Scanner ler = new Scanner(System.in);
+            int totQuest = 4;
+            String[] quest[] = {
+                    { "Qual a classe dos golginhos?", "A) Peixe ", "B) Anfibio", "C) Mamiferio" },
+                    { "Qual é a capital da França?", "A) Londres", "B) Madri", "C) Berlim" },
+                    { "Qual é o maior planeta do Sistema Solar?", "A) Terra", "B) Marte", "C) Júpiter" },
+                    { "Qual é o maior mamífero terrestre?", "A) Elefante Africano", "B) Girafa", "C) Rinoceronte" }
+            };
 
-        System.out.println("QUIZ DE CONHECIMENTOS GERAIS: ");
-        for (i = 0; i < totQuest; i++) {
-            System.out.println("Pergunta " + i + ":");
-            System.out.println(quest[i][0]);
-            for (int c = 1; c < totQuest; c++) {
-                System.out.println(quest[i][c]);
+            int respCorreta = 0;
+            int respErrada = 0;
+
+            System.out.println("QUIZ DE CONHECIMENTOS GERAIS: ");
+            for (i = 0; i < totQuest; i++) {
+                System.out.println("Pergunta " + i + ":");
+                System.out.println(quest[i][0]);
+                for (int c = 1; c < totQuest; c++) {
+                    System.out.println(quest[i][c]);
+                }
+                System.out.println("SELECIONE A RESPOSTA CORRETA");
+                System.out.println("a | b | c ");
+                quest[i][0] = ler.nextLine();
             }
-            System.out.println("SELECIONE A RESPOSTA CORRETA");
-            System.out.println("a | b | c ");
-            resp[i] = ler.nextLine();
-        }
 
+             //Verificando se a resposta do usuario bate com o gabarito do quiz
+            boolean condicaoRespCorreta = (gab[i] ==  quest[i][0] );
+            if (condicaoRespCorreta) {
+                respCorreta = respCorreta + 1;
+            } else {
+                respErrada = respErrada + 1;
+            }
+        }
     }
 }
