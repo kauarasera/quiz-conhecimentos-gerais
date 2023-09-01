@@ -17,17 +17,18 @@ Pergunta | resposta escolhida | resposta correta | Correção
 import java.util.Scanner;
 
 public class Quiz {
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 
         Scanner ler = new Scanner(System.in);
-        int totQuest= 5;
+        int totQuest = 4;
         String[] quest[] = {
-                { "Qual é a capital da França?", "A) Londres", "B) Madri", "C) Berlim", "D) Paris", "D" },
                 { "Qual a classe dos golginhos?", "A) Peixe ", "B) Anfibio", "C) Mamiferio" },
-                { "Qual é a capital da França?", "A) Londres", "B) Madri", "C) Berlim", "D) Paris", "D" },
-                { "Qual é o maior planeta do Sistema Solar?", "A) Terra", "B) Marte", "C) Júpiter", "D) Saturno", "C" },
-                { "Qual é o maior mamífero terrestre?", "A) Elefante Africano", "B) Girafa", "C) Rinoceronte",
-                        "D) Hipopótamo", "A" }
+                { "Qual é a capital da França?", "A) Londres", "B) Madri", "C) Berlim" },
+                { "Qual é o maior planeta do Sistema Solar?", "A) Terra", "B) Marte", "C) Júpiter" },
+                { "Qual é o maior mamífero terrestre?", "A) Elefante Africano", "B) Girafa", "C) Rinoceronte" }
         };
 
         int i;
@@ -35,17 +36,17 @@ public class Quiz {
         int respErrada = 0;
         String resp[] = new String[totQuest];
 
-        System.out.println("PERGUNTAS: ");
-        for (i = 0; i < 5; i++) {
-            System.out.println("Pergunta " + (i + 1) + ":");
+        System.out.println("QUIZ DE CONHECIMENTOS GERAIS: ");
+        for (i = 0; i < totQuest; i++) {
+            System.out.println("Pergunta " + i + ":");
             System.out.println(quest[i][0]);
-            for (int c = 1; c <= 4; c++) {
+            for (int c = 1; c < totQuest; c++) {
                 System.out.println(quest[i][c]);
             }
+            System.out.println("SELECIONE A RESPOSTA CORRETA");
+            System.out.println("a | b | c ");
+            resp[i] = ler.nextLine();
         }
 
-        System.out.println("SELECIONE A RESPOSTA CORRETA");
-        System.out.println("a | b | c ");
-        resp[i] = ler.nextLine();
     }
 }
