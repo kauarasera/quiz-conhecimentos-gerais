@@ -12,6 +12,37 @@ Exemplo de saída do quiz:
 Pergunta | resposta escolhida | resposta correta | Correção 
     1    |        D           |         D        | ✓ 
     2    |        C           |         D        | X
+    
+    Respostas:
+Qual a classe dos golfinhos?
+Resposta: C) Mamíferio
+
+Qual é a capital da França?
+Resposta: D) Paris
+
+Qual é o maior planeta do Sistema Solar?
+Resposta: C) Júpiter
+
+Qual é o maior mamífero terrestre?
+Resposta: D) Baleia Azul
+
+Quem foi o primeiro ser humano a pisar na Lua?
+Resposta: A) Neil Armstrong
+
+Qual é a pintura mais famosa de Leonardo da Vinci?
+Resposta: C) Mona Lisa
+
+Qual é o maior oceano do mundo?
+Resposta: D) Pacífico
+
+Qual é a maior ilha do mundo?
+Resposta: D) Groelândia (Nota: Há um erro de digitação, o correto é "Groenlândia").
+
+Qual é o rio mais longo do mundo?
+Resposta: A) Rio Nilo
+
+Quem escreveu a obra Dom Quixote?
+Resposta: B) Miguel de Cervantes
  */
 
 import java.util.Scanner;
@@ -46,7 +77,7 @@ public class Quiz {
                 { "Qual é a pintura mais famosa de Leonardo da Vinci?", "A) A Última Ceia", "B) A Noite Estrelada",
                         "C) Mona Lisa", "D) Guernica" },
                 { "Qual é o maior oceano do mundo?", "A) Atlântico", "B) Ìndico", "C) Ártico", "D) Pacífico" },
-                { "Qual é amaior ilha do mundo", "A) Havaí", "B) Japão", "C) Madagascar", "D) Groelândia" },
+                { "Qual é amaior ilha do mundo", "A) Havaí", "B) Japão", "C) Madagascar", "D) Groenlândia" },
                 { "Qual é o rio mais longo do mundo?", "A) Rio Nilo", "B) Rio Amazonas", "C) Rio Mississipi",
                         "D) Rio Yangtzé" },
                 { "Quem escreveu a obra Dom Quixote?", "A) Charles Dickens", "B) Miguel de Cervantes", "C) Leo Tolstoy",
@@ -60,7 +91,7 @@ public class Quiz {
         for (i = 0; i < totQuest; i++) {
             System.out.println("Pergunta " + (i + 1) + ":");
             System.out.println(quest[i][0]);
-            for (int c = 1; c < totQuest; c++) {
+            for (int c = 1; c < 4; c++) {
                 System.out.println(quest[i][c]);
             }
             System.out.println("SELECIONE A RESPOSTA CORRETA");
@@ -72,10 +103,12 @@ public class Quiz {
         boolean condicaoRespCorreta = (gab[i] == quest[i][0]);
         if (condicaoRespCorreta) {
             respCorreta = respCorreta + 1;
+            System.out.println("Respostas correta" + gab[i] );
         } else {
             respErrada = respErrada + 1;
+            System.out.println("Respostas errada" + gab[i] );
         }
 
-        // Resumo quz
+        // Etapa 2 -Resumo quiz
     }
 }
