@@ -102,18 +102,47 @@ public class Quiz {
             quest[i][0] = ler.nextLine();
         }
 
-        // Verificando se a resposta do usuario bate com o gabarito do quiz
-        boolean condicaoRespCorreta = (gab[i] == quest[i][0]);
-        if (condicaoRespCorreta) {
-            respCorreta = respCorreta + 1;
-            System.out.println("Respostas correta" + gab[i] );
-        } else {
-            respErrada = respErrada + 1;
-            System.out.println("Respostas errada" + gab[i] );
-        }
+        // Etapa 2 -Resumo quiz
 
         limpaTela();
-        // Etapa 2 -Resumo quiz
+        System.out.println("QUIZ CONCLUIDO, PARABÉNS!!!");
+        System.out.println();
+
+        // calculo da porcentagem de acertos
+        double porcentagemAcerto = respCorreta / totQuest * 100;
+
+        // Verificando se a resposta do usuario bate com o gabarito do quiz
+        boolean condicaoRespCorreta = (gab[i] == quest[i][0]);
+
+        if (condicaoRespCorreta) {
+            respCorreta = respCorreta + 1;
+            System.out.println("Você acertou " + respCorreta + " de " + totQuest + " perguntas.");
+            System.out.println("Aproveitamento de " + porcentagemAcerto + "%" + " e passou para o proximo nivel");
+        } else  {
+            respErrada = respErrada + 1;
+            System.out.println("Você acertou " + respCorreta+ " de " + totQuest + " perguntas.");
+            System.out.println("Aproveitamento de " + porcentagemAcerto + "%" + " e NÃO passou para o proximo nivel");
+        }
+
+        
+        /*
+         * Ao final do Quiz, caso o usuário seja aprovado, ou seja, tenha acertado pelo
+         * menos 60% do teste. O programa deve apresentar um resumo do mesmo. O Resumo
+         * deve conter para cada questão:
+         * 
+         * As respostas do usuário e a resposta correta;
+         * Total de respostas erradas e certas
+         * Indicação se o usuário passou ou não no teste. Tome como base a média de 60%.
+         * Caso o usurário não seja aprovado, ele deverá poder escolher entre sair do
+         * teste e encerrar o programa. Ou repita o teste.
+         * 
+         * Exemplo de saída do quiz:
+         * 
+         * Pergunta | resposta escolhida | resposta correta | Correção
+         * 1 | D | D | ✓
+         * 2 | C | D | X
+         */
+
     }
 
     // Método para limpar a tela imprimindo quebras de linha
