@@ -12,6 +12,6 @@ Caso o usurário não seja aprovado, ele deve poder escolher entre sair do teste
 
 Exemplo de saída do quiz:
 
-Pergunta | resposta escolhida | resposta correta | correção
- 1       |        D         |      D         |   ✓
- 2       |        C         |      D         |   X
+Pergunta | resposta escolhida | resposta correta   | correção
+ 1       |        D           |      D             |    ✓
+ 2       |        C           |      D             |    X
