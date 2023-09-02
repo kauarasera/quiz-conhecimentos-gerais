@@ -61,6 +61,9 @@ public class Quiz {
             System.out.print("Questão " + (i + 1) + ": ");
             gab[i] = leia.nextLine();
         }
+
+        limpaTela();
+
         // Vai ler cada pergunta e receber uma
         System.out.println("----------------------------------");
         System.out.println(" QUIZ CONHECIMENTOS GERAIS");
@@ -109,6 +112,14 @@ public class Quiz {
             System.out.println("Respostas errada" + gab[i] );
         }
 
+        limpaTela();
         // Etapa 2 -Resumo quiz
+    }
+
+    // Método para limpar a tela imprimindo quebras de linha
+    private static void limpaTela() {
+        for (int i = 0; i < 50; i++) {
+            System.out.println();
+        }
     }
 }
