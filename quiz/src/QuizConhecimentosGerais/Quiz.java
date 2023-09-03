@@ -3,6 +3,9 @@ package QuizConhecimentosGerais;
 import java.util.Scanner;
 
 public class Quiz {
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner leia = new Scanner(System.in);
         int totResp = 10;
@@ -11,6 +14,7 @@ public class Quiz {
         int totPerguntas = 10;
         int respCorreta = 0;
         int respErrada = 0;
+        double porcentagemAcertos;
         String gabRespostas[] = { "c", "d", "c", "d", "a", "c", "d", "d", "a", "b" };
         String respostaUsuario[] = new String[totPerguntas];
 
@@ -51,9 +55,6 @@ public class Quiz {
 
             respostaUsuario[i] = resposta;
 
-            // Verificando se a resposta do usuario bate com o gabarito do quiz
-            //boolean condicaoRespCorreta = (respostaUsuario[i] == gabRespostas[i]);
-
             if (respostaUsuario[i].equals(gabRespostas[i])) {
                 respCorreta++;
                 System.out.println("Acertou \n");
@@ -66,6 +67,27 @@ public class Quiz {
         limpaTela();
 
         System.out.println("=== Resumo do Quiz ===");
+
+        for (i = 0; i < totPerguntas; i++) {
+            if (respostaUsuario[i].equals(gabRespostas[i])) {
+                System.out.println("Pergunta " + (i + 1) + " | Resposta escolhida: " + respostaUsuario[i] +
+                    " | Resposta correta: " + gabRespostas[i] + " | Correção: " + (respostaUsuario[i].equals(gabRespostas[i]) ? "v" : "X"));
+        }
+    }
+
+
+        //calculo da porcentagem e mostro a alternatica correta
+        porcentagemAcertos = respCorreta / totPerguntas * 100;
+        System.out.println("\nVocê acertou " + respCorreta + " de " + totPerguntas );
+
+        if (porcentagemAcertos >= 60) {
+            System.out.println("PARABÉNS! Você passou e teve um aproveitamenteo de " + porcentagemAcertos + "%");
+        } else {
+            respErrada++;
+            System.out.println("\nVocê errou " + respCorreta + " de " + totPerguntas + "com sprovitamento de " + porcentagemAcertos + "%. Tente outravez");
+        }
+
+            //while
 
 
         System.out.println();
