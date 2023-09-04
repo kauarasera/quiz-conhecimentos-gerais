@@ -59,10 +59,10 @@ public class Quiz {
 
             if (condicaoRespCorreta) {
                 respCorreta++;
-                System.out.println("Acertou \n");
+                System.out.println("Acertou o/\n");
             } else {
                 respErrada++;
-                System.out.println("Errou. A resposta correta é: " + gabRespostas[i] + "\n");
+                System.out.println("Errou :'(. A resposta correta é: " + gabRespostas[i] + " \n");
             }
         }
 
@@ -73,26 +73,25 @@ public class Quiz {
         // boolean condicaoRespCorreta = respostaUsuario[i].equals(gabRespostas[i]);
         // saida fo quiz
                     System.out.println(
-                    "Pergunta " +  "  |  Resposta escolhida: " + " | Resposta correta: " + " | Correção: ");
+                    " Pergunta " +  "  |  Resposta escolhida: " + " | Resposta correta: " + " | Correção: ");
         for (i = 0; i < totPerguntas; i++) {
-
+            String numeroFormatado = String.format("%02d", i + 1);
                 if (respostaUsuario[i].equals(gabRespostas[i]) || respostaUsuario[i] != (gabRespostas[i])) {
                     System.out.println(
-                    "     " + (i + 1) + "     |          "        + respostaUsuario[i] + "            |         " + gabRespostas[i] + "          |     "
+                    "     " + (numeroFormatado) + "     |          "        + respostaUsuario[i] + "            |         " + gabRespostas[i] + "          |     "
                             + (respostaUsuario[i].equals(gabRespostas[i]) ? "v" : "X"));
             }
         }
 
         // calculo da porcentagem e mostro a alternatica correta
         porcentagemAcertos = respCorreta / totPerguntas * 100;
-        System.out.println("\nVocê acertou " + respCorreta + " de " + totPerguntas);
+        
 
-        if (porcentagemAcertos >= 60) {
+        if (porcentagemAcertos >= 60 || porcentagemAcertos <= 60 ) {
+            System.out.println("\nVocê acertou " + respCorreta + " de " + totPerguntas);
             System.out.println("PARABÉNS! Você passou e teve um aproveitamenteo de " + porcentagemAcertos + "%");
         } else {
-            respErrada++;
-            System.out.println("\nVocê errou " + respCorreta + " de " + totPerguntas + "com sprovitamento de "
-                    + porcentagemAcertos + "%. Tente outravez");
+            System.out.println("\nVocê errou " + respErrada + " de " + totPerguntas + " perguntas.");
         }
 
         // while
