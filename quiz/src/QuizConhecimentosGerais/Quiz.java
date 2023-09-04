@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class Quiz {
     public static void main(String[] args) {
         String op;
+
         do {
+
             Scanner leia = new Scanner(System.in);
             int i;
             String resposta;
@@ -15,7 +17,6 @@ public class Quiz {
             int porcentagemAcertos = 0;
             String gabRespostas[] = { "c", "d", "c", "d", "a", "c", "d", "d", "a", "b" };
             String respostaUsuario[] = new String[totPerguntas];
-
             String[] perguntas[] = {
                     { "Qual a classe dos golginhos?", "A) Peixe ", " B) Anfibio", " C) Mamiferio", " D) Aves" },
                     { "Qual é a capital da França?", "A) Londres", " B) Madri", " C) Berlim", "D) Paris" },
@@ -35,7 +36,7 @@ public class Quiz {
                             " C) Leo Tolstoy",
                             " D)Jane Austen" }
             };
-            // Vai ler cada pergunta e receber uma respsta
+
             System.out.println("----------------------------------");
             System.out.println(" QUIZ CONHECIMENTOS GERAIS");
             System.out.println("----------------------------------");
@@ -68,8 +69,6 @@ public class Quiz {
 
             System.out.println("============== Resumo do Quiz ==============");
 
-            // boolean condicaoRespCorreta = respostaUsuario[i].equals(gabRespostas[i]);
-            // saida fo quiz
             System.out.println(
                     " Pergunta " + "  |  Resposta escolhida: " + " | Resposta correta: " + " | Correção: ");
             for (i = 0; i < totPerguntas; i++) {
@@ -83,7 +82,6 @@ public class Quiz {
                 }
             }
 
-            // calculo da porcentagem e mostro a alternatica correta
             porcentagemAcertos = (respCorreta * 100) / totPerguntas;
             System.out.println();
             System.out.println(
@@ -95,15 +93,15 @@ public class Quiz {
                 System.out.println("Você NÃO passou com somente " + porcentagemAcertos + "% de acertos");
             }
 
-            // while
-
             System.out.print("Deseja tentar outra vez? [S/N]:");
             op = leia.nextLine();
 
         } while (op.equals("s"));
 
+        limpaTela();
+
         System.out.println();
-        System.out.println("QUIZ CONCLUIDO, PARABÉNS!!!");
+        System.out.println("QUIZ CONCLUIDO, ATÉ BREVE!!!");
         System.out.println();
     }
 
