@@ -3,12 +3,10 @@ package QuizConhecimentosGerais;
 import java.util.Scanner;
 
 public class Quiz {
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
+     String op;
+    do {
         Scanner leia = new Scanner(System.in);
-        int totResp = 10;
         int i;
         String resposta;
         int totPerguntas = 10;
@@ -36,66 +34,72 @@ public class Quiz {
                         " C) Leo Tolstoy",
                         " D)Jane Austen" }
         };
+            // Vai ler cada pergunta e receber uma respsta
+            System.out.println("----------------------------------");
+            System.out.println(" QUIZ CONHECIMENTOS GERAIS");
+            System.out.println("----------------------------------");
 
-        // Vai ler cada pergunta e receber uma respsta
-        System.out.println("----------------------------------");
-        System.out.println(" QUIZ CONHECIMENTOS GERAIS");
-        System.out.println("----------------------------------");
+            for (i = 0; i < totPerguntas; i++) {
+                System.out.println("Pergunta " + (i + 1) + ": " + perguntas[i][0]);
+                for (int c = 1; c < 5; c++) {
+                    System.out.print(perguntas[i][c]);
+                }
 
-        for (i = 0; i < totPerguntas; i++) {
-            System.out.println("Pergunta " + (i + 1) + ": " + perguntas[i][0]);
-            for (int c = 1; c < 5; c++) {
-                System.out.print(perguntas[i][c]);
+                System.out.println();
+                System.out.println("-----------------------------------");
+                System.out.print("DIGITE A ALTERNATIVA CORRETA (A) (B) (C) (D): \n -> ");
+                resposta = leia.nextLine().toLowerCase();
+
+                respostaUsuario[i] = resposta;
+
+                boolean condicaoRespCorreta = respostaUsuario[i].equals(gabRespostas[i]);
+
+                if (condicaoRespCorreta) {
+                    respCorreta++;
+                    System.out.println("Acertou o/\n");
+                } else {
+                    respErrada++;
+                    System.out.println("Errou :'(. A resposta correta é: " + gabRespostas[i] + " \n");
+                }
             }
 
+            limpaTela();
+
+            System.out.println("============== Resumo do Quiz ==============");
+
+            // boolean condicaoRespCorreta = respostaUsuario[i].equals(gabRespostas[i]);
+            // saida fo quiz
+            System.out.println(
+                    " Pergunta " + "  |  Resposta escolhida: " + " | Resposta correta: " + " | Correção: ");
+            for (i = 0; i < totPerguntas; i++) {
+                String numeroFormatado = String.format("%02d", i + 1);
+                if (respostaUsuario[i].equals(gabRespostas[i]) || respostaUsuario[i] != (gabRespostas[i])) {
+                    System.out.println(
+                            "     " + (numeroFormatado) + "     |          " + respostaUsuario[i]
+                                    + "            |         "
+                                    + gabRespostas[i] + "          |     "
+                                    + (respostaUsuario[i].equals(gabRespostas[i]) ? "v" : "X"));
+                }
+            }
+
+            // calculo da porcentagem e mostro a alternatica correta
+            porcentagemAcertos = (respCorreta * 100) / totPerguntas;
             System.out.println();
-            System.out.println("-----------------------------------");
-            System.out.print("DIGITE A ALTERNATIVA CORRETA (A) (B) (C) (D): \n -> ");
-            resposta = leia.nextLine().toLowerCase();
+            System.out.println(
+                    "Você acertou " + respCorreta + " e errou " + respErrada + " de " + totPerguntas + " perguntas.");
 
-            respostaUsuario[i] = resposta;
-
-            boolean condicaoRespCorreta = respostaUsuario[i].equals(gabRespostas[i]);
-
-            if (condicaoRespCorreta) {
-                respCorreta++;
-                System.out.println("Acertou o/\n");
+            if (porcentagemAcertos >= 60) {
+                System.out.println("Você passou com " + porcentagemAcertos + "% de acertos");
             } else {
-                respErrada++;
-                System.out.println("Errou :'(. A resposta correta é: " + gabRespostas[i] + " \n");
+                System.out.println("Você NÃO passou com somente " + porcentagemAcertos + "% de acertos");
             }
-        }
 
-        limpaTela();
+            // while
 
-        System.out.println("============== Resumo do Quiz ==============");
+            System.out.print("Deseja tentar outra vez? [S/N]:");
+            op = leia.nextLine();
 
-        // boolean condicaoRespCorreta = respostaUsuario[i].equals(gabRespostas[i]);
-        // saida fo quiz
-        System.out.println(
-                " Pergunta " + "  |  Resposta escolhida: " + " | Resposta correta: " + " | Correção: ");
-        for (i = 0; i < totPerguntas; i++) {
-            String numeroFormatado = String.format("%02d", i + 1);
-            if (respostaUsuario[i].equals(gabRespostas[i]) || respostaUsuario[i] != (gabRespostas[i])) {
-                System.out.println(
-                        "     " + (numeroFormatado) + "     |          " + respostaUsuario[i] + "            |         "
-                                + gabRespostas[i] + "          |     "
-                                + (respostaUsuario[i].equals(gabRespostas[i]) ? "v" : "X"));
-            }
-        }
-
-        // calculo da porcentagem e mostro a alternatica correta
-        porcentagemAcertos = (respCorreta * 100) / totPerguntas;
-        System.out.println();
-        System.out.println("Você acertou " + respCorreta + " e errou " + respErrada + " de " + totPerguntas + " perguntas.");
-
-        if (porcentagemAcertos >= 60) {
-            System.out.println("Você passou com " + porcentagemAcertos + "% de acertos");
-        } else {
-            System.out.println("Você NÃO passou com somente " + porcentagemAcertos + "% de acertos");
-        }
-
-        // while
+        } while (op.equals("s"));
 
         System.out.println();
         System.out.println("QUIZ CONCLUIDO, PARABÉNS!!!");
