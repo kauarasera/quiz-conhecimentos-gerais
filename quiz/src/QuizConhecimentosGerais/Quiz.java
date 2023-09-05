@@ -18,12 +18,12 @@ public class Quiz {
             String gabRespostas[] = { "c", "d", "c", "d", "a", "c", "d", "d", "a", "b" };
             String respostaUsuario[] = new String[totPerguntas];
             String[] perguntas[] = {
-                    { "Qual a classe dos golginhos?", "A) Peixe ", " B) Anfibio", " C) Mamiferio", " D) Aves" },
-                    { "Qual é a capital da França?", "A) Londres", " B) Madri", " C) Berlim", "D) Paris" },
+                    { "Qual a classe dos golginhos?", " A) Peixe ", " B) Anfibio", " C) Mamiferio", " D) Aves" },
+                    { "Qual é a capital da França?", " A) Londres", " B) Madri", " C) Berlim", " D) Paris" },
                     { "Qual é o maior planeta do Sistema Solar?", " A) Terra", "B) Marte", " C) Júpiter", "D) Vênus" },
                     { "Qual é o maior mamífero terrestre?", " A) Elefante Africano", " B) Girafa", " C) Rinoceronte",
                             " D) Baleia Azul" },
-                    { "Quem foi o primeiro ser humano a pisar na Lua?", " A) Neil Armstrong ", "B) Yuri Gagarin",
+                    { "Quem foi o primeiro ser humano a pisar na Lua?", " A) Neil Armstrong ", " B) Yuri Gagarin",
                             " C) Buzz Aldrin", " D) John Glenn" },
                     { "Qual é a pintura mais famosa de Leonardo da Vinci?", " A) A Última Ceia",
                             " B) A Noite Estrelada",
@@ -96,10 +96,11 @@ public class Quiz {
             System.out.print("Deseja tentar outra vez? [S/N]:");
             op = leia.nextLine();
 
+             limpaTela();
+
         } while (op.equals("s"));
 
-        limpaTela();
-
+       
         System.out.println();
         System.out.println("QUIZ CONCLUIDO, ATÉ BREVE!!!");
         System.out.println();
