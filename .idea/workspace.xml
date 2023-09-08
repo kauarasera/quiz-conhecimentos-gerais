@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9e596e0-0e4c-4e76-9043-88661fe20817" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/quiz-conhecimentos-gerais/QuizConhecimentosGerais/Quiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/quiz-conhecimentos-gerais/QuizConhecimentosGerais/Quiz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/QuizConhecimentosGerais/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/QuizConhecimentosGerais/Quiz.java" afterDir="false" />
-    </list>
+    <list default="true" id="e9e596e0-0e4c-4e76-9043-88661fe20817" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
