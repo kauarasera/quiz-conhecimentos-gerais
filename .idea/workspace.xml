@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9e596e0-0e4c-4e76-9043-88661fe20817" name="Changes" comment="" />
+    <list default="true" id="e9e596e0-0e4c-4e76-9043-88661fe20817" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/quiz-conhecimentos-gerais/QuizConhecimentosGerais/Quiz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/quiz-conhecimentos-gerais/QuizConhecimentosGerais/Quiz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quiz/src/QuizConhecimentosGerais/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/quiz/src/QuizConhecimentosGerais/Quiz.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +48,13 @@
       </RecentBranches>
     </option>
   </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+      </list>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -63,6 +75,26 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Quiz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="QuizConhecimentosGerais.Quiz" />
+      <module name="quiz-conhecimentos-gerais" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="QuizConhecimentosGerais.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Quiz" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
