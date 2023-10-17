@@ -1,13 +1,15 @@
 package QuizConhecimentosGerais;
 
 public class Gabarito {
-    private String[] respostasCorretas;
+    public String[] gabaritoRespostas = {
+            "c", "d", "c", "d", "a", "c", "d", "d", "a", "b"
+    };
 
-    public Gabarito(String[] respostasCorretas) {
-        this.respostasCorretas = respostasCorretas;
+    public String[] getGabaritoRespostas() {
+        return gabaritoRespostas;
     }
 
-    public String getRespostaCorreta(int index) {
-        return respostasCorretas[index];
+    public void setGabaritoRespostas(String[] gabaritoRespostas) {
+        this.gabaritoRespostas = gabaritoRespostas;
     }
 }
