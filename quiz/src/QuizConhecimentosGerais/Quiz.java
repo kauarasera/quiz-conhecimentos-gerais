@@ -4,14 +4,16 @@ import java.util.Scanner;
 
 public class Quiz {
 
+    private Gabarito gabarito;
     private String[] gabRespostas;
     private String[] respostaUsuario;
     private int respCorreta;
     private int respErrada;
     private int totalPerguntas;
 
-    public Quiz( int totalPerguntas) {
+    public Quiz( int totalPerguntas, Gabarito gabarito) {
         this.totalPerguntas = totalPerguntas;
+        this.gabarito = gabarito;
         this.respCorreta = 0;
         this.respErrada = 0;
         this.gabRespostas = new String[]{"c", "d", "c", "d", "a", "c", "d", "d", "a", "b"};;
@@ -24,13 +26,13 @@ public class Quiz {
         String op;
 
         do {
-            limpaTela();
+            LimparTela.limpatela();
             System.out.println("----------------------------------");
             System.out.println(" QUIZ CONHECIMENTOS GERAIS");
             System.out.println("----------------------------------");
 
             for (int i = 0; i < totalPerguntas; i++) {
-                imprimirQuestao(Perguntas.perguntas[i]);
+                ImprimeQuestao.imprimirQuestao(Perguntas.perguntas[i]);
                 System.out.print("DIGITE A ALTERNATIVA CORRETA (A) (B) (C) (D): \n -> ");
                 String resposta = leia.nextLine().toLowerCase();
                 respostaUsuario[i] = resposta;
@@ -45,8 +47,7 @@ public class Quiz {
                 }
             }
 
-            limpaTela();
-
+            LimparTela.limpatela();
             //chamando procedimento para imprimir resumo
             imprimirResumo();
 
@@ -54,20 +55,15 @@ public class Quiz {
             System.out.print("Deseja tentar outra vez? [S/N]: ");
             op = leia.nextLine();
 
-            limpaTela();
+            LimparTela.limpatela();
 
         } while (op.equalsIgnoreCase("s"));
 
         System.out.println();
         System.out.println("QUIZ CONCLUÍDO, ATÉ BREVE!!!");
         System.out.println();
-    }
-    // Função para imprimir uma questão
-    private void imprimirQuestao(String[] pergunta) {
-        System.out.println("Pergunta: " + pergunta[0]);
-        for (int i = 1; i < pergunta.length; i++) {
-            System.out.println(pergunta[i]);
-        }
+
+        new ImprimeQuestao();
     }
 
     // procedimento para imprimir o resumo do quiz
