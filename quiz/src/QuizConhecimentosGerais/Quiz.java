@@ -11,16 +11,16 @@ public class Quiz {
     private int respErrada;
     private int totalPerguntas;
 
-    public Quiz( int totalPerguntas, Gabarito gabarito) {
+    public Quiz(int totalPerguntas, Gabarito gabarito) {
         this.totalPerguntas = totalPerguntas;
         this.gabarito = gabarito;
         this.respCorreta = 0;
         this.respErrada = 0;
-        this.gabRespostas = new String[]{"c", "d", "c", "d", "a", "c", "d", "d", "a", "b"};;
+        this.gabRespostas = new String[]{"c", "d", "c", "d", "a", "c", "d", "d", "a", "b"};
+        ;
         this.respostaUsuario = new String[totalPerguntas];
     }
 
-    // Procedimento para executar o quiz
     public void executarQuiz() {
         Scanner leia = new Scanner(System.in);
         String op;
@@ -48,10 +48,9 @@ public class Quiz {
             }
 
             LimparTela.limpatela();
-            //chamando procedimento para imprimir resumo
-            imprimirResumo();
+            ResumoImpresso.imprimirResumo(respCorreta, respCorreta, totalPerguntas, respostaUsuario, gabRespostas);
 
-            //Caso usuario não tenha obtido mais que 60% de acertos ele tem a opção de refazer o quiz.
+            //Refaça o quiz caso o usuario não tenha atingido 60% de acertos.
             System.out.print("Deseja tentar outra vez? [S/N]: ");
             op = leia.nextLine();
 
@@ -84,13 +83,6 @@ public class Quiz {
             System.out.println("Você passou com " + porcentagemAcertos + "% de acertos");
         } else {
             System.out.println("Você NÃO passou com somente " + porcentagemAcertos + "% de acertos");
-        }
-    }
-
-    // procedimento para limpar a tela imprimindo quebras de linha
-    private static void limpaTela() {
-        for (int i = 0; i < 50; i++) {
-            System.out.println();
         }
     }
 }
