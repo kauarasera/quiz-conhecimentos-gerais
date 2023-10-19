@@ -48,7 +48,7 @@ public class Quiz {
             }
 
             LimparTela.limpatela();
-            ResumoImpresso.imprimirResumo(respCorreta, respCorreta, totalPerguntas, respostaUsuario, gabRespostas);
+            ResumoImpresso.imprimirResumo(respCorreta, respErrada, totalPerguntas, respostaUsuario, gabRespostas);
 
             //Refaça o quiz caso o usuario não tenha atingido 60% de acertos.
             System.out.print("Deseja tentar outra vez? [S/N]: ");

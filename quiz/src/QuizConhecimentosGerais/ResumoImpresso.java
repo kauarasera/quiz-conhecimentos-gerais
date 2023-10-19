@@ -1,12 +1,7 @@
 package QuizConhecimentosGerais;
 
 public class ResumoImpresso {
-
-    public static void imprimirResumo(int respCorretas,
-                                      int respErradas,
-                                      int totalPerguntas,
-                                      String[] respostaUsuario,
-                                      String[] gabRespostas) {
+    public static void imprimirResumo(int respCorretas, int respErradas, int totalPerguntas, String[] respostaUsuario, String[] gabRespostas) {
         System.out.println("============== Resumo do Quiz ==============");
         System.out.println(" Pergunta  |  Resposta escolhida  | Resposta correta  | Correção ");
         for (int i = 0; i < totalPerguntas; i++) {
